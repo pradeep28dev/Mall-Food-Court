@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shop Owner Login | Mall Food Court</title>
+
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <!-- LEFT SECTION -->
+
+        <div class="login-info">
+
+            <div class="brand">
+                <div class="brand-icon">M</div>
+                <span>Mall Food Court</span>
+            </div>
+
+            <div class="info-content">
+
+                <span class="welcome-label">SHOP OWNER PORTAL</span>
+
+                <h1>Manage Your Food Shop Smarter.</h1>
+
+                <p>
+                    Manage your food menu, receive customer orders,
+                    monitor preparation queues and grow your business
+                    from one place.
+                </p>
+
+                <div class="feature-list">
+
+                    <div class="feature">
+                        <span>✓</span>
+                        <p>Manage food items and categories</p>
+                    </div>
+
+                    <div class="feature">
+                        <span>✓</span>
+                        <p>Receive and manage customer orders</p>
+                    </div>
+
+                    <div class="feature">
+                        <span>✓</span>
+                        <p>Monitor your live order queue</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="info-footer">
+                Mall Food Court Management System
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SECTION -->
+
+        <div class="login-form-section">
+
+            <div class="login-box">
+
+                <div class="mobile-brand">
+                    <div class="brand-icon">M</div>
+                    <span>Mall Food Court</span>
+                </div>
+
+                <div class="form-heading">
+
+                    <span class="form-label">WELCOME BACK</span>
+
+                    <h2>Shop Owner Login</h2>
+
+                    <p>
+                        Enter your registered credentials to access
+                        your shop dashboard.
+                    </p>
+
+                </div>
+
+
+                <form id="loginForm">
+
+                    <div class="form-group">
+
+                        <label for="email">Email Address</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your registered email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="password">Password</label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter your password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <p id="errorMessage" class="error-message"></p>
+
+                    <p id="successMessage" class="success-message"></p>
+
+
+                    <button type="submit" class="login-button">
+                        Login to Dashboard
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+
+                <div class="signup-link">
+
+                    Don't have an account?
+
+                    <a href="signup.html">Register Your Shop</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/auth.js"></script>
+
+</body>
+</html>

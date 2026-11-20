@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | Food Court</title>
+
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="profile-header">
+    <a href="home.html" class="brand">
+        <i class="fas fa-utensils"></i>
+        Food Court
+    </a>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="orders.html">My Orders</a>
+        <a href="profile.html" class="active">My Profile</a>
+        <a href="notifications.html">Notifications   <span class="notification-badge">0</span>  </a>
+        <button id="logoutButton" class="logout-btn">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+    </nav>
+</header>
+
+<main class="profile-container">
+
+    <div class="page-heading">
+        <span class="eyebrow">ACCOUNT SETTINGS</span>
+        <h1>My Profile</h1>
+        <p>Manage your personal information and account details.</p>
+    </div>
+
+    <section class="profile-layout">
+
+        <div class="profile-card">
+            <div class="avatar" id="profileAvatar">C</div>
+
+            <h2 id="displayName">Customer Name</h2>
+            <p id="displayEmail">customer@email.com</p>
+
+            <div class="profile-badge">
+                <i class="fas fa-check-circle"></i>
+                Registered Customer
+            </div>
+
+            <div class="profile-meta">
+                <div>
+                    <span>Customer ID</span>
+                    <strong id="customerId">-</strong>
+                </div>
+
+                <div>
+                    <span>Member Since</span>
+                    <strong id="registrationDate">-</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-card">
+
+            <div class="form-heading">
+                <div>
+                    <h2>Personal Information</h2>
+                    <p>Update your account information below.</p>
+                </div>
+
+                <i class="fas fa-user-edit"></i>
+            </div>
+
+            <form id="profileForm">
+
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="fullName"
+                               placeholder="Enter your full name" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-wrapper disabled">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" readonly>
+                    </div>
+                    <small>Email address cannot be changed here.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Mobile Number</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" id="phone"
+                               maxlength="10"
+                               placeholder="Enter 10-digit mobile number"
+                               required>
+                    </div>
+                </div>
+
+                <div id="message" class="message"></div>
+
+                <button type="submit" class="save-btn">
+                    <i class="fas fa-save"></i>
+                    Save Changes
+                </button>
+
+            </form>
+        </div>
+
+    </section>
+
+</main>
+
+<script src="js/profile.js"></script>
+<script src="js/notification-badge.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mall Owner Dashboard</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">M</div>
+                <h2>MALL<span>FOOD</span></h2>
+            </div>
+
+            <div class="admin-profile">
+
+                <div class="admin-avatar">A</div>
+
+                <div>
+                    <h3>Administrator</h3>
+                    <p>Mall Owner</p>
+                </div>
+
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="nav-link active">
+                    <span>▦</span>
+                    Dashboard
+                </a>
+
+                <a href="shops.html" class="nav-link">
+                    <span>▣</span>
+                    Food Shops
+                </a>
+
+                <a href="add-shop.html" class="nav-link">
+                    <span>＋</span>
+                    Add New Shop
+                </a>
+
+                <a href="settings.html" class="nav-link">
+                    <span>⚙</span>
+                    Settings
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <div class="sidebar-message">
+                    <p>Food Court Management</p>
+                    <span>Manage your mall smarter.</span>
+                </div>
+
+                <button id="logoutButton" class="logout-button">
+                    <span>↪</span>
+                    Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+
+            <header class="topbar">
+
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Welcome back, Administrator!</p>
+                </div>
+
+                <div class="topbar-right">
+
+                    <div class="date-display" id="currentDate"></div>
+
+                    <div class="topbar-avatar">A</div>
+
+                </div>
+
+            </header>
+
+
+            <!-- PAGE CONTENT -->
+
+            <section class="dashboard-content">
+
+                <div class="page-heading">
+
+                    <div>
+                        <h2>Overview</h2>
+                        <p>Monitor and manage your food court operations.</p>
+                    </div>
+
+                    <a href="add-shop.html" class="primary-button">
+                        + Add New Shop
+                    </a>
+
+                </div>
+
+
+                <!-- STATISTICS CARDS -->
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon total-icon">▣</div>
+
+                        <div>
+                            <p>Total Food Shops</p>
+                            <h2 id="totalShops">0</h2>
+                            <span>Registered shops</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon active-icon">✓</div>
+
+                        <div>
+                            <p>Active Shops</p>
+                            <h2 id="activeShops">0</h2>
+                            <span>Currently operational</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon inactive-icon">!</div>
+
+                        <div>
+                            <p>Inactive Shops</p>
+                            <h2 id="inactiveShops">0</h2>
+                            <span>Currently unavailable</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon owner-icon">♙</div>
+
+                        <div>
+                            <p>Shop Owners</p>
+                            <h2 id="totalOwners">0</h2>
+                            <span>Registered accounts</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RECENT SHOPS -->
+
+                <div class="table-section">
+
+                    <div class="table-heading">
+
+                        <div>
+                            <h2>Recently Added Food Shops</h2>
+                            <p>Overview of your registered food shops.</p>
+                        </div>
+
+                        <a href="shops.html" class="view-all-button">
+                            View All →
+                        </a>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Shop Name</th>
+                                    <th>Shop ID</th>
+                                    <th>Owner Name</th>
+                                    <th>Registration Date</th>
+                                    <th>Status</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="recentShopsTable">
+
+                                <!-- JavaScript inserts rows here -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK ACTIONS -->
+
+                <div class="quick-actions">
+
+                    <h2>Quick Actions</h2>
+
+                    <div class="action-grid">
+
+                        <a href="add-shop.html" class="action-card">
+
+                            <div class="action-icon">＋</div>
+
+                            <div>
+                                <h3>Register New Shop</h3>
+                                <p>Add a new food shop to your mall.</p>
+                            </div>
+
+                            <span>→</span>
+
+                        </a>
+
+
+                        <a href="shops.html" class="action-card">
+
+                            <div class="action-icon">▣</div>
+
+                            <div>
+                                <h3>Manage Food Shops</h3>
+                                <p>View and manage existing shops.</p>
+                            </div>
+
+                            <span>→</span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

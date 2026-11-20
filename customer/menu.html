@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Food Menu | FoodCourt</title>
+
+    <link rel="stylesheet" href="css/menu.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <a href="home.html" class="brand">
+            🍔 FoodCourt
+        </a>
+
+        <nav class="nav-links">
+            <a href="home.html">Explore</a>
+            <a href="orders.html">My Orders</a>
+            <a href="notifications.html">Notifications    <span class="notification-badge">0</span>  </a>
+        </nav>
+
+        <div class="header-actions">
+
+            <a href="cart.html" class="cart-button">
+                🛒 Cart
+                <span id="cartCount" class="cart-count">0</span>
+            </a>
+
+            <div class="profile-avatar" id="profileAvatar">C</div>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- BACK BUTTON -->
+
+        <div class="page-container">
+
+            <a href="home.html" class="back-button">
+                ← Back to Food Shops
+            </a>
+
+
+            <!-- SHOP DETAILS -->
+
+            <section class="shop-hero">
+
+                <div class="shop-icon" id="shopIcon">🍽️</div>
+
+                <div class="shop-details">
+
+                    <span class="shop-label">FOOD COURT SHOP</span>
+
+                    <h1 id="shopName">Loading Shop...</h1>
+
+                    <p id="shopDescription">
+                        Explore delicious food.
+                    </p>
+
+                    <div class="shop-meta">
+
+                        <span id="shopId">Shop ID</span>
+
+                        <span id="shopStatus" class="shop-status">
+                            Available
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- MENU HEADING -->
+
+            <section class="menu-heading">
+
+                <div>
+                    <span class="section-tag">FRESH & DELICIOUS</span>
+                    <h2>Our Menu</h2>
+                    <p>Choose your favourite food and add it to your cart.</p>
+                </div>
+
+                <span id="itemCount" class="item-count">0 Items</span>
+
+            </section>
+
+
+            <!-- SEARCH -->
+
+            <div class="search-box">
+
+                <span>🔍</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search food items..."
+                >
+
+                <button type="button" id="clearSearch">Clear</button>
+
+            </div>
+
+
+            <!-- CATEGORY FILTER -->
+
+            <section class="category-section">
+
+                <div id="categoryFilters" class="category-filters">
+                    <!-- Categories generated using JavaScript -->
+                </div>
+
+            </section>
+
+
+            <!-- FOOD ITEMS -->
+
+            <section class="food-section">
+
+                <div id="foodGrid" class="food-grid">
+                    <!-- Food items generated using JavaScript -->
+                </div>
+
+                <div id="emptyState" class="empty-state" style="display:none;">
+
+                    <div>🍽️</div>
+
+                    <h3>No Food Items Found</h3>
+
+                    <p id="emptyMessage">
+                        This shop has not added any food items yet.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- TOAST MESSAGE -->
+
+    <div id="toast" class="toast"></div>
+
+
+    <footer class="footer">
+        © 2026 FoodCourt. Made for food lovers.
+    </footer>
+
+
+    <script src="js/menu.js"></script>
+    <script src="js/notification-badge.js"></script>
+    
+</body>
+
+</html>

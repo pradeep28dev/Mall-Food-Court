@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings | Mall Food Court</title>
+
+    <link rel="stylesheet" href="css/settings.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">M</div>
+            <div>
+                <h2>Mall Food</h2>
+                <p>Administration</p>
+            </div>
+        </div>
+
+        <div class="admin-profile">
+            <div class="profile-avatar">A</div>
+            <div>
+                <h3>Administrator</h3>
+                <p>Mall Owner</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="nav-link">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="shops.html" class="nav-link">
+                <span>▣</span> Food Shops
+            </a>
+
+            <a href="add-shop.html" class="nav-link">
+                <span>＋</span> Add New Shop
+            </a>
+
+            <a href="settings.html" class="nav-link active">
+                <span>⚙</span> Settings
+            </a>
+
+        </nav>
+
+        <div class="sidebar-message">
+            <h3>Mall Management</h3>
+            <p>Manage your food court operations from one place.</p>
+        </div>
+
+        <button id="logoutButton" class="logout-button">
+            <span>↪</span> Logout
+        </button>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="top-header">
+
+            <div>
+                <h1>Settings</h1>
+                <p>Manage your mall administration preferences.</p>
+            </div>
+
+            <div class="header-date" id="currentDate"></div>
+
+        </header>
+
+
+        <!-- MALL INFORMATION -->
+        <section class="settings-card">
+
+            <div class="section-heading">
+                <div class="section-icon">🏢</div>
+                <div>
+                    <h2>Mall Information</h2>
+                    <p>Manage your mall's basic information.</p>
+                </div>
+            </div>
+
+            <form id="mallForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="mallName">Mall Name</label>
+                        <input
+                            type="text"
+                            id="mallName"
+                            placeholder="Enter mall name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mallEmail">Official Email</label>
+                        <input
+                            type="email"
+                            id="mallEmail"
+                            placeholder="Enter official email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mallPhone">Contact Number</label>
+                        <input
+                            type="tel"
+                            id="mallPhone"
+                            placeholder="Enter 10-digit mobile number"
+                            maxlength="10"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mallLocation">Mall Location</label>
+                        <input
+                            type="text"
+                            id="mallLocation"
+                            placeholder="Enter mall location"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <p class="form-message" id="mallMessage"></p>
+
+                <button type="submit" class="primary-button">
+                    Save Mall Information
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- ADMIN PROFILE -->
+        <section class="settings-card">
+
+            <div class="section-heading">
+                <div class="section-icon">👤</div>
+                <div>
+                    <h2>Administrator Profile</h2>
+                    <p>Update your administrator information.</p>
+                </div>
+            </div>
+
+            <form id="profileForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="adminName">Administrator Name</label>
+                        <input
+                            type="text"
+                            id="adminName"
+                            placeholder="Enter administrator name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adminEmail">Email Address</label>
+                        <input
+                            type="email"
+                            id="adminEmail"
+                            readonly
+                        >
+                    </div>
+
+                </div>
+
+                <p class="form-message" id="profileMessage"></p>
+
+                <button type="submit" class="primary-button">
+                    Save Profile
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- NOTIFICATION SETTINGS -->
+        <section class="settings-card">
+
+            <div class="section-heading">
+                <div class="section-icon">🔔</div>
+                <div>
+                    <h2>Notification Preferences</h2>
+                    <p>Choose which notifications you want to receive.</p>
+                </div>
+            </div>
+
+            <div class="notification-list">
+
+                <div class="notification-item">
+                    <div>
+                        <h3>New Shop Registration</h3>
+                        <p>Receive notifications when a shop owner registers.</p>
+                    </div>
+
+                    <label class="switch">
+                        <input type="checkbox" id="shopNotifications">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+
+                <div class="notification-item">
+                    <div>
+                        <h3>Shop Status Updates</h3>
+                        <p>Receive notifications about shop activation changes.</p>
+                    </div>
+
+                    <label class="switch">
+                        <input type="checkbox" id="statusNotifications">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+
+                <div class="notification-item">
+                    <div>
+                        <h3>System Notifications</h3>
+                        <p>Receive important system-related announcements.</p>
+                    </div>
+
+                    <label class="switch">
+                        <input type="checkbox" id="systemNotifications">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+            </div>
+
+            <p class="form-message" id="notificationMessage"></p>
+
+            <button type="button" id="saveNotifications" class="primary-button">
+                Save Preferences
+            </button>
+
+        </section>
+
+
+        <!-- ACCOUNT INFORMATION -->
+        <section class="settings-card account-card">
+
+            <div class="section-heading">
+                <div class="section-icon">🔐</div>
+                <div>
+                    <h2>Account Information</h2>
+                    <p>View your current administrator account.</p>
+                </div>
+            </div>
+
+            <div class="account-info">
+
+                <div>
+                    <span>Account Email</span>
+                    <strong id="accountEmail">-</strong>
+                </div>
+
+                <div>
+                    <span>Account Type</span>
+                    <strong>Mall Administrator</strong>
+                </div>
+
+                <div>
+                    <span>Authentication</span>
+                    <strong class="demo-status">Frontend Demo</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer class="page-footer">
+            Mall Food Court Management System © 2026
+        </footer>
+
+    </main>
+
+
+    <!-- MOBILE BOTTOM NAVIGATION -->
+    <nav class="mobile-bottom-nav">
+
+        <a href="dashboard.html">
+            <span>▦</span>
+            <small>Dashboard</small>
+        </a>
+
+        <a href="shops.html">
+            <span>▣</span>
+            <small>Food Shops</small>
+        </a>
+
+        <a href="add-shop.html">
+            <span>＋</span>
+            <small>Add Shop</small>
+        </a>
+
+        <a href="settings.html" class="active">
+            <span>⚙</span>
+            <small>Settings</small>
+        </a>
+
+        <button id="mobileLogoutButton">
+            <span>↪</span>
+            <small>Logout</small>
+        </button>
+
+    </nav>
+
+
+    <script src="js/settings.js"></script>
+
+</body>
+</html>

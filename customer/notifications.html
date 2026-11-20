@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications | Food Court</title>
+    <link rel="stylesheet" href="css/notifications.css">
+</head>
+<body>
+
+    <header class="top-header">
+        <div class="header-content">
+            <a href="home.html" class="logo">Food<span>Court</span></a>
+
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="orders.html">My Orders</a>
+                <a href="cart.html">Cart</a>
+                <a href="profile.html">Profile</a>
+                <a href="notifications.html" class="active">
+                    Notifications
+                    <span id="navNotificationCount" class="nav-badge">0</span>
+                </a>
+            </nav>
+
+            <button id="logoutButton" class="logout-btn">Logout</button>
+        </div>
+    </header>
+
+    <main class="notifications-container">
+
+        <section class="page-heading">
+            <div>
+                <p class="eyebrow">STAY UPDATED</p>
+                <h1>Notifications 🔔</h1>
+                <p class="subtitle">
+                    All your food order updates in one place.
+                </p>
+            </div>
+
+            <button id="markAllReadButton" class="mark-all-btn">
+                Mark all as read
+            </button>
+        </section>
+
+        <section class="notification-stats">
+            <div class="stat-card">
+                <div class="stat-icon total-icon">📬</div>
+                <div>
+                    <p>Total Notifications</p>
+                    <h2 id="totalNotifications">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon unread-icon">🔴</div>
+                <div>
+                    <p>Unread</p>
+                    <h2 id="unreadNotifications">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon read-icon">✅</div>
+                <div>
+                    <p>Read</p>
+                    <h2 id="readNotifications">0</h2>
+                </div>
+            </div>
+        </section>
+
+        <section class="notification-panel">
+
+            <div class="panel-header">
+                <h2>Your Updates</h2>
+
+                <select id="notificationFilter">
+                    <option value="all">All Notifications</option>
+                    <option value="unread">Unread</option>
+                    <option value="read">Read</option>
+                </select>
+            </div>
+
+            <div id="notificationsList" class="notifications-list"></div>
+
+            <div id="emptyState" class="empty-state">
+                <div class="empty-icon">🔔</div>
+                <h3>No notifications yet</h3>
+                <p>
+                    Your order updates will appear here.
+                </p>
+                <a href="home.html" class="explore-btn">
+                    Explore Food Shops
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="js/notifications.js"></script>
+    <script src="js/notification-badge.js"></script>
+</body>
+</html>

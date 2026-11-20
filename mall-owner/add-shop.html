@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add New Shop | Mall Food</title>
+
+    <link rel="stylesheet" href="css/add-shop.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">M</div>
+                <h2>MALL<span>FOOD</span></h2>
+            </div>
+
+            <div class="admin-profile">
+
+                <div class="admin-avatar">A</div>
+
+                <div>
+                    <h3>Administrator</h3>
+                    <p>Mall Owner</p>
+                </div>
+
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="nav-link">
+                    <span>▦</span>
+                    Dashboard
+                </a>
+
+                <a href="shops.html" class="nav-link">
+                    <span>▣</span>
+                    Food Shops
+                </a>
+
+                <a href="add-shop.html" class="nav-link active">
+                    <span>＋</span>
+                    Add New Shop
+                </a>
+
+                <a href="#" class="nav-link">
+                    <span>⚙</span>
+                    Settings
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <div class="sidebar-message">
+                    <p>Food Court Management</p>
+                    <span>Manage your mall smarter.</span>
+                </div>
+
+                <button id="logoutButton" class="logout-button">
+                    <span>↪</span>
+                    Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+
+            <header class="topbar">
+
+                <div>
+                    <h1>Add New Food Shop</h1>
+                    <p>Register a new food shop in your mall.</p>
+                </div>
+
+                <div class="topbar-avatar">A</div>
+
+            </header>
+
+
+            <!-- PAGE CONTENT -->
+
+            <section class="page-content">
+
+                <div class="page-heading">
+
+                    <div>
+                        <h2>Shop Registration</h2>
+
+                        <p>
+                            Enter the food shop owner's details
+                            to register a new shop.
+                        </p>
+                    </div>
+
+                    <a href="dashboard.html" class="back-button">
+                        ← Back to Dashboard
+                    </a>
+
+                </div>
+
+
+                <!-- REGISTRATION FORM -->
+
+                <div class="form-container">
+
+                    <div class="form-header">
+
+                        <div class="form-icon">＋</div>
+
+                        <div>
+                            <h2>New Shop Details</h2>
+                            <p>Fields marked with * are mandatory.</p>
+                        </div>
+
+                    </div>
+
+
+                    <form id="shopForm">
+
+                        <div class="form-grid">
+
+                            <!-- SHOP NAME -->
+
+                            <div class="input-group">
+
+                                <label for="shopName">
+                                    Food Shop Name *
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="shopName"
+                                    placeholder="Enter food shop name"
+                                    maxlength="60"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- OWNER NAME -->
+
+                            <div class="input-group">
+
+                                <label for="ownerName">
+                                    Owner Name *
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="ownerName"
+                                    placeholder="Enter owner's full name"
+                                    maxlength="60"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- EMAIL -->
+
+                            <div class="input-group">
+
+                                <label for="email">
+                                    Email Address *
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    placeholder="Enter email address"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- PHONE -->
+
+                            <div class="input-group">
+
+                                <label for="phone">
+                                    Phone Number *
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    placeholder="Enter 10-digit phone number"
+                                    maxlength="10"
+                                    pattern="[6-9][0-9]{9}"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- DESCRIPTION -->
+
+                            <div class="input-group full-width">
+
+                                <label for="description">
+                                    Shop Description *
+                                </label>
+
+                                <textarea
+                                    id="description"
+                                    placeholder="Describe the food shop..."
+                                    rows="4"
+                                    maxlength="300"
+                                    required
+                                ></textarea>
+
+                            </div>
+
+
+                            <!-- SHOP ID -->
+
+                            <div class="input-group full-width">
+
+                                <label>
+                                    Generated Shop ID
+                                </label>
+
+                                <div class="shop-id-box">
+
+                                    <span id="shopIdPreview">
+                                        Will be generated automatically
+                                    </span>
+
+                                    <span class="auto-badge">
+                                        AUTO GENERATED
+                                    </span>
+
+                                </div>
+
+                                <small>
+                                    This unique ID will be used by the
+                                    food shop owner during registration.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- FORM BUTTONS -->
+
+                        <div class="form-buttons">
+
+                            <button
+                                type="reset"
+                                class="cancel-button"
+                                id="cancelButton"
+                            >
+                                Clear Form
+                            </button>
+
+                            <button
+                                type="submit"
+                                class="submit-button"
+                            >
+                                Register Food Shop →
+                            </button>
+
+                        </div>
+
+                        <p id="message"></p>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- SUCCESS MODAL -->
+
+    <div class="modal-overlay" id="successModal">
+
+        <div class="success-modal">
+
+            <div class="success-icon">✓</div>
+
+            <h2>Shop Registered Successfully!</h2>
+
+            <p>
+                Your new food shop has been added to the mall.
+            </p>
+
+            <div class="generated-id">
+
+                <span>UNIQUE SHOP ID</span>
+
+                <h2 id="generatedShopId"></h2>
+
+            </div>
+
+            <p class="modal-note">
+                Share this Shop ID with the food shop owner.
+                They will need it to create their account.
+            </p>
+
+            <button id="doneButton">
+                Go to Dashboard
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/add-shop.js"></script>
+
+</body>
+
+</html>

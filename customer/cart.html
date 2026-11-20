@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart | Food Court</title>
+
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<header class="cart-header">
+
+    <a href="home.html" class="brand">
+        <i class="fas fa-utensils"></i> Food Court
+    </a>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="orders.html">My Orders</a>
+        <a href="profile.html">My Profile</a>
+        <a href="notifications.html">Notifications    <span class="notification-badge">0</span> </a>
+        <button id="logoutButton" class="logout-btn">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+    </nav>
+
+</header>
+
+
+<main class="cart-container">
+
+    <div class="page-heading">
+        <span class="eyebrow">YOUR SELECTION</span>
+        <h1>My Shopping Cart</h1>
+        <p>Review your delicious choices before placing your order.</p>
+    </div>
+
+
+    <div class="cart-layout">
+
+        <!-- CART ITEMS -->
+
+        <section class="cart-items-section">
+
+            <div class="section-heading">
+                <h2>Your Items</h2>
+                <span id="cartItemCount">0 Items</span>
+            </div>
+
+            <div id="cartItems" class="cart-items"></div>
+
+
+            <!-- EMPTY CART -->
+
+            <div id="emptyCart" class="empty-cart">
+
+                <div class="empty-icon">
+                    <i class="fas fa-shopping-basket"></i>
+                </div>
+
+                <h2>Your cart is empty!</h2>
+
+                <p>Looks like you haven't added anything delicious yet.</p>
+
+                <a href="home.html" class="browse-btn">
+                    Explore Food Shops
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ORDER SUMMARY -->
+
+        <aside class="summary-card">
+
+            <h2>Order Summary</h2>
+
+            <div class="summary-row">
+                <span>Total Items</span>
+                <strong id="summaryItemCount">0</strong>
+            </div>
+
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <strong id="subtotal">₹0.00</strong>
+            </div>
+
+            <div class="summary-row">
+                <span>Platform Fee</span>
+                <strong id="platformFee">₹0.00</strong>
+            </div>
+
+            <div class="summary-divider"></div>
+
+            <div class="summary-row total-row">
+                <span>Total Amount</span>
+                <strong id="grandTotal">₹0.00</strong>
+            </div>
+
+            <button id="checkoutButton" class="checkout-btn">
+                Proceed to Checkout
+                <i class="fas fa-arrow-right"></i>
+            </button>
+
+            <a href="home.html" class="continue-shopping">
+                <i class="fas fa-arrow-left"></i>
+                Continue Shopping
+            </a>
+
+            <div class="secure-note">
+                <i class="fas fa-shield-alt"></i>
+                Secure checkout experience
+            </div>
+
+        </aside>
+
+    </div>
+
+</main>
+
+
+<!-- CHECKOUT MODAL -->
+
+<div id="checkoutModal" class="modal">
+
+    <div class="modal-content">
+
+        <button id="closeCheckoutModal" class="close-modal">
+            &times;
+        </button>
+
+        <div class="modal-heading">
+            <div class="checkout-icon">
+                <i class="fas fa-receipt"></i>
+            </div>
+
+            <h2>Complete Your Order</h2>
+            <p>Confirm your details before placing your order.</p>
+        </div>
+
+
+        <form id="checkoutForm">
+
+            <div class="form-group">
+
+                <label for="customerName">Full Name</label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    required
+                    placeholder="Enter your name"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="customerPhone">Mobile Number</label>
+
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    maxlength="10"
+                    required
+                    placeholder="Enter mobile number"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="orderType">Order Type</label>
+
+                <select id="orderType" required>
+
+                    <option value="Dine-in">Dine-in</option>
+
+                    <option value="Takeaway">Takeaway</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group" id="tableGroup">
+
+                <label for="tableNumber">Table Number</label>
+
+                <input
+                    type="text"
+                    id="tableNumber"
+                    placeholder="Enter your table number"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="orderNotes">Special Instructions (Optional)</label>
+
+                <textarea
+                    id="orderNotes"
+                    rows="3"
+                    placeholder="Any special requests?"
+                ></textarea>
+
+            </div>
+
+
+            <div class="checkout-total">
+
+                <span>Payable Amount</span>
+
+                <strong id="checkoutTotal">₹0.00</strong>
+
+            </div>
+
+
+            <button type="submit" class="place-order-btn">
+
+                <i class="fas fa-check-circle"></i>
+
+                Place Order
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ORDER CONFIRMATION MODAL -->
+
+<div id="orderSuccessModal" class="success-modal">
+
+    <div class="success-card">
+
+        <button id="closeSuccessModal" class="success-close">
+            &times;
+        </button>
+
+        <div class="success-animation">
+            <div class="success-circle">
+                <i class="fas fa-check"></i>
+            </div>
+        </div>
+
+        <span class="success-label">ORDER CONFIRMED</span>
+
+        <h2>Yay! Your order is placed!</h2>
+
+        <p class="success-description">
+            Your delicious food journey has started.
+            The shop will begin processing your order shortly.
+        </p>
+
+        <div class="success-order-details">
+
+            <div>
+                <span>Order ID</span>
+                <strong id="successOrderId">-</strong>
+            </div>
+
+            <div>
+                <span>Shop</span>
+                <strong id="successShopName">-</strong>
+            </div>
+
+            <div>
+                <span>Amount Paid / Due</span>
+                <strong id="successOrderAmount">-</strong>
+            </div>
+
+        </div>
+
+        <div class="success-actions">
+
+            <button id="trackOrderButton" class="track-order-btn">
+                Track My Order
+                <i class="fas fa-arrow-right"></i>
+            </button>
+
+            <button id="continueShoppingButton" class="continue-btn">
+                Continue Shopping
+            </button>
+
+        </div>
+
+        <div class="success-footer">
+            <i class="fas fa-heart"></i>
+            Thank you for ordering with us!
+        </div>
+
+    </div>
+
+</div>
+
+<div id="toast" class="toast"></div>
+
+
+<script src="js/cart.js"></script>
+<script src="js/notification-badge.js"></script>
+
+</body>
+</html>

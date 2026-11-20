@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Orders | FoodCourt</title>
+
+    <link rel="stylesheet" href="css/orders.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="header-container">
+
+            <a href="home.html" class="logo">
+                <span>🍽️</span>
+                FoodCourt<span class="logo-highlight">.</span>
+            </a>
+
+            <nav class="navigation">
+                <a href="home.html">Home</a>
+                <a href="home.html#shops">Explore Shops</a>
+                <a href="orders.html" class="active">My Orders</a>
+                <a href="cart.html">My Cart</a>
+                <a href="notifications.html">Notifications   <span class="notification-badge">0</span>  </a>
+            </nav>
+
+            <div class="header-actions">
+
+                <a href="cart.html" class="cart-button">
+                    🛒
+                    <span id="cartCount">0</span>
+                </a>
+
+                <button class="logout-button" id="logoutButton">
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-container">
+
+        <!-- PAGE HEADING -->
+        <section class="page-heading">
+
+            <div>
+                <span class="eyebrow">YOUR FOOD JOURNEY</span>
+
+                <h1>My Orders</h1>
+
+                <p>
+                    Track your orders and stay updated on their progress.
+                </p>
+            </div>
+
+            <a href="home.html" class="explore-button">
+                + Order More Food
+            </a>
+
+        </section>
+
+
+        <!-- ORDER STATISTICS -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-icon total-icon">📦</div>
+
+                <div>
+                    <p>Total Orders</p>
+                    <h2 id="totalOrders">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon active-icon">⏳</div>
+
+                <div>
+                    <p>Active Orders</p>
+                    <h2 id="activeOrders">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon ready-icon">✅</div>
+
+                <div>
+                    <p>Ready for Pickup</p>
+                    <h2 id="readyOrders">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon completed-icon">🎉</div>
+
+                <div>
+                    <p>Completed Orders</p>
+                    <h2 id="completedOrders">0</h2>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- FILTER SECTION -->
+        <section class="filter-section">
+
+            <div class="filter-heading">
+                <div>
+                    <h2>Order History</h2>
+                    <p id="orderCountText">Showing 0 orders</p>
+                </div>
+            </div>
+
+            <div class="filter-controls">
+
+                <div class="search-box">
+                    <span>🔍</span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search by order ID or shop..."
+                    >
+                </div>
+
+                <select id="statusFilter">
+                    <option value="All">All Orders</option>
+                    <option value="Placed">Placed</option>
+                    <option value="Accepted">Accepted</option>
+                    <option value="Preparing">Preparing</option>
+                    <option value="Ready">Ready for Pickup</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
+
+                <select id="sortFilter">
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- ORDERS LIST -->
+        <section id="ordersContainer" class="orders-container"></section>
+
+
+        <!-- EMPTY STATE -->
+        <section id="emptyState" class="empty-state" style="display: none;">
+
+            <div class="empty-icon">🛍️</div>
+
+            <h2>No Orders Found</h2>
+
+            <p>
+                You haven't placed any orders yet.
+                Explore food shops and order something delicious!
+            </p>
+
+            <a href="home.html" class="explore-button">
+                Explore Food Shops
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- ORDER DETAILS MODAL -->
+    <div class="modal-overlay" id="orderModal">
+
+        <div class="modal">
+
+            <div class="modal-header">
+
+                <div>
+                    <span class="eyebrow">ORDER DETAILS</span>
+                    <h2 id="modalOrderId">Order Details</h2>
+                </div>
+
+                <button id="closeModal" class="close-modal">
+                    &times;
+                </button>
+
+            </div>
+
+            <div id="modalContent"></div>
+
+            <div class="modal-footer">
+                <button id="closeModalButton">
+                    Close
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOAST -->
+    <div id="toast" class="toast"></div>
+
+
+    <script src="js/orders.js"></script>
+    <script src="js/notification-badge.js"></script>
+
+</body>
+
+</html>

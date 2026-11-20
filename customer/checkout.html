@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout | FoodCourt</title>
+
+    <link rel="stylesheet" href="css/checkout.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-container">
+
+            <a href="home.html" class="logo">
+                🍽️ FoodCourt<span>.</span>
+            </a>
+
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="orders.html">My Orders</a>
+                <a href="cart.html">My Cart</a>
+            </nav>
+
+            <button id="logoutButton" class="logout-button">
+                Logout
+            </button>
+
+        </div>
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="main-container">
+
+        <section class="page-heading">
+            <div>
+                <span class="eyebrow">ALMOST THERE!</span>
+                <h1>Complete Your Order</h1>
+                <p>Review your details and confirm your food order.</p>
+            </div>
+
+            <a href="cart.html" class="back-button">
+                ← Back to Cart
+            </a>
+        </section>
+
+
+        <form id="checkoutForm">
+
+            <div class="checkout-layout">
+
+                <!-- LEFT SECTION -->
+                <div class="checkout-main">
+
+                    <!-- CUSTOMER DETAILS -->
+                    <section class="checkout-card">
+
+                        <div class="section-heading">
+                            <div class="section-icon">👤</div>
+
+                            <div>
+                                <h2>Customer Details</h2>
+                                <p>Confirm your contact information.</p>
+                            </div>
+                        </div>
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label for="customerName">Full Name</label>
+
+                                <input
+                                    type="text"
+                                    id="customerName"
+                                    required
+                                    minlength="3"
+                                    placeholder="Enter your full name"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="customerPhone">Mobile Number</label>
+
+                                <input
+                                    type="tel"
+                                    id="customerPhone"
+                                    required
+                                    maxlength="10"
+                                    pattern="[6-9][0-9]{9}"
+                                    placeholder="10-digit mobile number"
+                                >
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="customerEmail">Email Address</label>
+
+                                <input
+                                    type="email"
+                                    id="customerEmail"
+                                    readonly
+                                >
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- PICKUP DETAILS -->
+                    <section class="checkout-card">
+
+                        <div class="section-heading">
+                            <div class="section-icon">📍</div>
+
+                            <div>
+                                <h2>Pickup Information</h2>
+                                <p>Your orders will be collected from their respective shops.</p>
+                            </div>
+                        </div>
+
+                        <div class="pickup-notice">
+                            <span>🏪</span>
+
+                            <div>
+                                <h3>Food Court Pickup</h3>
+
+                                <p>
+                                    Visit each respective food shop when your
+                                    order is marked Ready.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="specialInstructions">
+                                Special Instructions (Optional)
+                            </label>
+
+                            <textarea
+                                id="specialInstructions"
+                                rows="3"
+                                maxlength="250"
+                                placeholder="Any special instructions for your order?"
+                            ></textarea>
+                        </div>
+
+                    </section>
+
+
+                    <!-- PAYMENT -->
+                    <section class="checkout-card">
+
+                        <div class="section-heading">
+                            <div class="section-icon">💳</div>
+
+                            <div>
+                                <h2>Payment Method</h2>
+                                <p>Choose how you want to pay.</p>
+                            </div>
+                        </div>
+
+                        <label class="payment-option">
+
+                            <input
+                                type="radio"
+                                name="paymentMethod"
+                                value="Pay at Counter"
+                                checked
+                            >
+
+                            <div class="payment-details">
+                                <strong>💵 Pay at Counter</strong>
+
+                                <span>
+                                    Pay directly at the respective food shop
+                                    when collecting your order.
+                                </span>
+                            </div>
+
+                            <span class="recommended-badge">
+                                Available
+                            </span>
+
+                        </label>
+
+                        <p class="payment-note">
+                            Online payments will be enabled in a future update.
+                        </p>
+
+                    </section>
+
+                </div>
+
+
+                <!-- RIGHT SECTION -->
+                <aside class="order-summary">
+
+                    <h2>Order Summary</h2>
+
+                    <p class="summary-subtitle">
+                        Review your selected food items.
+                    </p>
+
+                    <div id="checkoutItems"></div>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="summary-row">
+                        <span>Total Items</span>
+                        <strong id="totalItems">0</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <strong id="subtotal">₹0.00</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Pickup Fee</span>
+                        <strong class="free-label">FREE</strong>
+                    </div>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="grand-total">
+                        <span>Grand Total</span>
+                        <strong id="grandTotal">₹0.00</strong>
+                    </div>
+
+                    <button type="submit" id="placeOrderButton">
+                        Place Order →
+                    </button>
+
+                    <p class="secure-note">
+                        🔒 Please verify your order before confirming.
+                    </p>
+
+                </aside>
+
+            </div>
+
+        </form>
+
+    </main>
+
+
+    <!-- SUCCESS MODAL -->
+    <div class="modal-overlay" id="successModal">
+
+        <div class="success-modal">
+
+            <div class="success-icon">✓</div>
+
+            <h2>Order Placed Successfully!</h2>
+
+            <p>
+                Your food orders have been sent to their respective shops.
+            </p>
+
+            <div id="generatedOrders"></div>
+
+            <button id="viewOrdersButton">
+                View My Orders →
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+
+    <script src="js/checkout.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mall Owner Login | Food Court Management</title>
+
+    <link rel="stylesheet" href="css/login.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <!-- Left Section -->
+
+        <div class="login-left">
+
+            <div class="brand">
+                <div class="brand-icon">M</div>
+                <h2>MALL<span>FOOD</span></h2>
+            </div>
+
+            <div class="welcome-content">
+
+                <p class="welcome-tag">ADMINISTRATION PORTAL</p>
+
+                <h1>Manage Your<br>
+                    Food Court <span>Smarter.</span>
+                </h1>
+
+                <p class="welcome-description">
+                    Manage food shops, monitor operations and
+                    create a seamless food ordering experience
+                    for everyone in your mall.
+                </p>
+
+            </div>
+
+            <div class="left-footer">
+                © 2026 Mall Food Court Management System
+            </div>
+
+        </div>
+
+
+        <!-- Right Section -->
+
+        <div class="login-right">
+
+            <div class="login-box">
+
+                <div class="mobile-brand">
+                    <h2>MALL<span>FOOD</span></h2>
+                </div>
+
+                <div class="login-heading">
+
+                    <p class="small-heading">WELCOME BACK</p>
+
+                    <h1>Admin Login</h1>
+
+                    <p>
+                        Enter your credentials to access
+                        the administration dashboard.
+                    </p>
+
+                </div>
+
+
+                <form id="loginForm">
+
+                    <div class="input-group">
+
+                        <label for="email">Email Address</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email address"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="password">Password</label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter your password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                class="toggle-password"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-options">
+
+                        <label class="remember-me">
+
+                            <input type="checkbox" id="remember">
+
+                            <span>Remember me</span>
+
+                        </label>
+
+                    </div>
+
+
+                    <button type="submit" class="login-button">
+
+                        Sign In
+
+                        <span>→</span>
+
+                    </button>
+
+
+                    <p id="errorMessage" class="error-message"></p>
+
+                    <p id="successMessage" class="success-message"></p>
+
+                </form>
+
+
+                <div class="login-footer">
+
+                    <p>
+                        Authorized personnel only.
+                    </p>
+
+                    <p>
+                        Mall Food Court Administration
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/auth.js"></script>
+
+</body>
+
+</html>

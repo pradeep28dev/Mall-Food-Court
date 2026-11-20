@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Orders Management | ShopHub</title>
+
+    <link rel="stylesheet" href="css/orders.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">S</div>
+                <span>Shop<span class="highlight">Hub</span></span>
+            </div>
+
+            <div class="sidebar-label">MAIN MENU</div>
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="nav-link">
+                    <span class="nav-icon">▦</span>
+                    Dashboard
+                </a>
+
+                <a href="menu.html" class="nav-link">
+                    <span class="nav-icon">☷</span>
+                    Menu Management
+                </a>
+
+                <a href="orders.html" class="nav-link active">
+                    <span class="nav-icon">▤</span>
+                    Orders
+                </a>
+
+                <a href="settings.html" class="nav-link">
+                    <span class="nav-icon">⚙</span>
+                    Settings
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <div class="account-card">
+
+                    <div class="account-avatar" id="ownerInitial">S</div>
+
+                    <div class="account-details">
+                        <h4 id="sidebarOwnerName">Shop Owner</h4>
+                        <p>Shop Owner</p>
+                    </div>
+
+                </div>
+
+                <button class="logout-button" id="logoutButton">
+                    ↪ Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+            <!-- HEADER -->
+
+            <header class="top-header">
+
+                <div>
+                    <p class="breadcrumb">Shop Owner / Orders</p>
+                    <h2>Orders Management</h2>
+                </div>
+
+                <div class="header-right">
+
+                    <div class="shop-id-display" id="headerShopId">
+                        MALL001
+                    </div>
+
+                    <div class="profile-avatar" id="headerInitial">
+                        S
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- PAGE INTRO -->
+
+            <section class="page-intro">
+
+                <div>
+                    <span class="section-tag">ORDER MANAGEMENT</span>
+
+                    <h1>Manage Your Orders</h1>
+
+                    <p>
+                        Receive customer orders, manage preparation
+                        and keep your food queue organized.
+                    </p>
+                </div>
+
+                <button class="refresh-button" id="refreshButton">
+                    ↻ Refresh Orders
+                </button>
+
+            </section>
+
+
+            <!-- SUMMARY CARDS -->
+
+            <section class="summary-grid">
+
+                <div class="summary-card">
+                    <div class="summary-icon red-bg">▤</div>
+
+                    <div>
+                        <p>Total Orders</p>
+                        <h2 id="totalOrders">0</h2>
+                    </div>
+                </div>
+
+
+                <div class="summary-card">
+                    <div class="summary-icon orange-bg">◷</div>
+
+                    <div>
+                        <p>New Orders</p>
+                        <h2 id="newOrders">0</h2>
+                    </div>
+                </div>
+
+
+                <div class="summary-card">
+                    <div class="summary-icon blue-bg">♨</div>
+
+                    <div>
+                        <p>Preparing</p>
+                        <h2 id="preparingOrders">0</h2>
+                    </div>
+                </div>
+
+
+                <div class="summary-card">
+                    <div class="summary-icon green-bg">✓</div>
+
+                    <div>
+                        <p>Ready Orders</p>
+                        <h2 id="readyOrders">0</h2>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- QUEUE OVERVIEW -->
+
+            <section class="queue-section">
+
+                <div class="queue-header">
+
+                    <div>
+                        <span class="section-tag">LIVE PREPARATION QUEUE</span>
+                        <h3>Order Preparation Queue</h3>
+                        <p>Process accepted orders in the order they arrived.</p>
+                    </div>
+
+                    <div class="queue-count">
+                        <span id="queueCount">0</span>
+                        <small>Pending</small>
+                    </div>
+
+                </div>
+
+
+                <div class="queue-list" id="queueList">
+
+                    <!-- Queue items generated using JavaScript -->
+
+                </div>
+
+
+                <div class="queue-empty" id="queueEmpty">
+
+                    <div>✓</div>
+
+                    <h4>Queue is Clear</h4>
+
+                    <p>There are no orders waiting for preparation.</p>
+
+                </div>
+
+            </section>
+
+
+            <!-- ALL ORDERS -->
+
+            <section class="orders-section">
+
+                <div class="orders-heading">
+
+                    <div>
+                        <h3>All Orders</h3>
+                        <p>View and manage orders received by your shop.</p>
+                    </div>
+
+                    <span class="order-count" id="orderCount">0 orders</span>
+
+                </div>
+
+
+                <!-- SEARCH AND FILTER -->
+
+                <div class="filter-section">
+
+                    <div class="search-box">
+                        <span>⌕</span>
+
+                        <input
+                            type="search"
+                            id="searchInput"
+                            placeholder="Search order ID or customer..."
+                        >
+                    </div>
+
+
+                    <select id="statusFilter">
+
+                        <option value="all">All Orders</option>
+                        <option value="Placed">New Orders</option>
+                        <option value="Accepted">Accepted</option>
+                        <option value="Preparing">Preparing</option>
+                        <option value="Ready">Ready</option>
+                        <option value="Completed">Completed</option>
+                        <option value="Rejected">Rejected</option>
+
+                    </select>
+
+
+                    <select id="sortFilter">
+
+                        <option value="oldest">Oldest First</option>
+                        <option value="newest">Newest First</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- ORDERS TABLE -->
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>ORDER ID</th>
+                                <th>CUSTOMER</th>
+                                <th>ITEMS</th>
+                                <th>AMOUNT</th>
+                                <th>TIME</th>
+                                <th>STATUS</th>
+                                <th>ACTION</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="ordersTableBody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- EMPTY STATE -->
+
+                <div class="empty-state" id="emptyState">
+
+                    <div class="empty-icon">▤</div>
+
+                    <h3>No Orders Found</h3>
+
+                    <p>
+                        New customer orders will appear here.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <footer class="page-footer">
+                © 2026 ShopHub. All rights reserved.
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- MOBILE NAVIGATION -->
+
+    <nav class="mobile-bottom-nav">
+
+        <a href="dashboard.html" class="mobile-nav-link">
+            <span>▦</span>
+            <small>Home</small>
+        </a>
+
+        <a href="menu.html" class="mobile-nav-link">
+            <span>☷</span>
+            <small>Menu</small>
+        </a>
+
+        <a href="orders.html" class="mobile-nav-link active">
+            <span>▤</span>
+            <small>Orders</small>
+        </a>
+
+        <a href="settings.html" class="mobile-nav-link">
+            <span>⚙</span>
+            <small>Settings</small>
+        </a>
+        
+    </nav>
+
+
+    <!-- ORDER DETAILS MODAL -->
+
+    <div class="modal-overlay" id="orderModal">
+
+        <div class="modal">
+
+            <div class="modal-header">
+
+                <div>
+                    <span class="section-tag">ORDER DETAILS</span>
+                    <h2 id="modalOrderId">Order Details</h2>
+                </div>
+
+                <button class="close-button" id="closeOrderModal">×</button>
+
+            </div>
+
+
+            <div class="order-detail-content">
+
+                <div class="detail-block">
+
+                    <h4>Customer Information</h4>
+
+                    <p>
+                        <span>Customer</span>
+                        <strong id="detailCustomer">-</strong>
+                    </p>
+
+                    <p>
+                        <span>Phone</span>
+                        <strong id="detailPhone">-</strong>
+                    </p>
+
+                </div>
+
+
+                <div class="detail-block">
+
+                    <h4>Order Information</h4>
+
+                    <p>
+                        <span>Order Time</span>
+                        <strong id="detailTime">-</strong>
+                    </p>
+
+                    <p>
+                        <span>Order Status</span>
+                        <strong id="detailStatus">-</strong>
+                    </p>
+
+                </div>
+
+
+                <div class="detail-block">
+
+                    <h4>Ordered Items</h4>
+
+                    <div id="detailItems"></div>
+
+                </div>
+
+
+                <div class="detail-total">
+
+                    <span>Total Amount</span>
+
+                    <strong id="detailTotal">₹0.00</strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button class="cancel-button" id="closeDetailsButton">
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- REJECTION MODAL -->
+
+    <div class="modal-overlay" id="rejectModal">
+
+        <div class="modal reject-modal">
+
+            <div class="delete-icon">!</div>
+
+            <h2>Reject This Order?</h2>
+
+            <p>
+                Please provide a reason for rejecting this order.
+            </p>
+
+            <textarea
+                id="rejectReason"
+                rows="3"
+                placeholder="Example: Item currently unavailable..."
+            ></textarea>
+
+            <p class="form-error" id="rejectError"></p>
+
+            <div class="modal-actions">
+
+                <button class="cancel-button" id="cancelRejectButton">
+                    Cancel
+                </button>
+
+                <button class="reject-confirm-button" id="confirmRejectButton">
+                    Reject Order
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/orders.js"></script>
+
+</body>
+</html>

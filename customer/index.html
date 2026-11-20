@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Login | FoodCourt</title>
+
+    <link rel="stylesheet" href="css/login.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <!-- LEFT PANEL -->
+        <div class="login-info">
+
+            <div class="brand">
+                <div class="brand-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+
+                <h2>FoodCourt</h2>
+            </div>
+
+
+            <div class="info-content">
+
+                <span class="tag">CUSTOMER PORTAL</span>
+
+                <h1>Your Favourite Food, Just a Few Clicks Away.</h1>
+
+                <p>
+                    Explore food outlets, discover delicious meals,
+                    order your favourites and track your orders
+                    without waiting in long queues.
+                </p>
+
+
+                <div class="feature">
+                    <i class="fas fa-store"></i>
+                    <span>Explore multiple food outlets</span>
+                </div>
+
+                <div class="feature">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Order your favourite food easily</span>
+                </div>
+
+                <div class="feature">
+                    <i class="fas fa-clock"></i>
+                    <span>Track your orders in real time</span>
+                </div>
+
+            </div>
+
+
+            <p class="copyright">
+                © 2026 FoodCourt Management System
+            </p>
+
+        </div>
+
+
+        <!-- RIGHT LOGIN SECTION -->
+        <div class="login-form-section">
+
+            <div class="form-wrapper">
+
+                <div class="mobile-brand">
+                    <i class="fas fa-utensils"></i>
+                    FoodCourt
+                </div>
+
+
+                <div class="form-heading">
+
+                    <h2>Welcome Back!</h2>
+
+                    <p>
+                        Login to discover and order delicious food.
+                    </p>
+
+                </div>
+
+
+                <form id="loginForm">
+
+                    <div class="form-group">
+
+                        <label for="email">Email Address</label>
+
+                        <div class="input-box">
+
+                            <i class="fas fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="password">Password</label>
+
+                        <div class="input-box">
+
+                            <i class="fas fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter your password"
+                                required
+                            >
+
+                            <button type="button"
+                                id="togglePassword"
+                                class="toggle-password">
+
+                                <i class="fas fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="errorMessage" class="message error-message"></div>
+
+                    <div id="successMessage" class="message success-message"></div>
+
+
+                    <button type="submit" class="login-button">
+
+                        Login
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </button>
+
+                </form>
+
+
+                <div class="signup-link">
+
+                    Don't have an account?
+
+                    <a href="signup.html">Create Account</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/auth.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shop Settings | Food Court</title>
+
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+
+                <div>
+                    <h2>FoodCourt</h2>
+                    <p>Shop Owner Panel</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html">
+                    <i class="fas fa-th-large"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="menu.html">
+                    <i class="fas fa-book-open"></i>
+                    <span>Menu Management</span>
+                </a>
+
+                <a href="orders.html">
+                    <i class="fas fa-receipt"></i>
+                    <span>Orders</span>
+                </a>
+
+                <a href="settings.html" class="active">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+                <button id="logoutButton">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div>
+                    <h1>Settings</h1>
+                    <p>Manage your shop information and preferences.</p>
+                </div>
+
+                <div class="shop-badge">
+                    <i class="fas fa-store"></i>
+                    <span id="headerShopName">My Shop</span>
+                </div>
+
+            </header>
+
+
+            <!-- SHOP INFORMATION -->
+            <section class="settings-card">
+
+                <div class="section-heading">
+                    <div class="heading-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+
+                    <div>
+                        <h2>Shop Information</h2>
+                        <p>Manage your shop's contact information.</p>
+                    </div>
+                </div>
+
+                <form id="shopInformationForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label>Shop Name</label>
+                            <input type="text" id="shopName" disabled>
+                            <small>Shop name is managed by the Mall Owner.</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Shop ID</label>
+                            <input type="text" id="shopId" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Owner Name</label>
+                            <input type="text" id="ownerName" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Registered Email</label>
+                            <input type="email" id="shopEmail" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Contact Number</label>
+                            <input type="tel" id="shopPhone" maxlength="10"
+                                placeholder="Enter contact number" required>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label>Shop Description</label>
+                            <textarea id="shopDescription" rows="4"
+                                placeholder="Describe your shop..."></textarea>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="primary-button">
+                        <i class="fas fa-save"></i>
+                        Save Shop Information
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <!-- OPERATING HOURS -->
+            <section class="settings-card">
+
+                <div class="section-heading">
+                    <div class="heading-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+
+                    <div>
+                        <h2>Operating Hours</h2>
+                        <p>Set the time during which your shop operates.</p>
+                    </div>
+                </div>
+
+                <form id="operatingHoursForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label>Opening Time</label>
+                            <input type="time" id="openingTime" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Closing Time</label>
+                            <input type="time" id="closingTime" required>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="primary-button">
+                        <i class="fas fa-save"></i>
+                        Save Operating Hours
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <!-- ORDER PREFERENCES -->
+            <section class="settings-card">
+
+                <div class="section-heading">
+                    <div class="heading-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+
+                    <div>
+                        <h2>Order Preferences</h2>
+                        <p>Control how your shop handles incoming orders.</p>
+                    </div>
+                </div>
+
+                <form id="orderPreferencesForm">
+
+                    <div class="form-group preparation-group">
+
+                        <label>Average Preparation Time</label>
+
+                        <div class="input-with-unit">
+                            <input type="number" id="preparationTime"
+                                min="1" max="180" required>
+
+                            <span>Minutes</span>
+                        </div>
+
+                        <small>
+                            This is the estimated time required to prepare an order.
+                        </small>
+
+                    </div>
+
+
+                    <div class="setting-row">
+
+                        <div>
+                            <h3>Accept New Orders</h3>
+                            <p>Allow customers to place orders from your shop.</p>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" id="acceptOrders">
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+
+                    <button type="submit" class="primary-button">
+                        <i class="fas fa-save"></i>
+                        Save Order Preferences
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <!-- NOTIFICATION PREFERENCES -->
+            <section class="settings-card">
+
+                <div class="section-heading">
+                    <div class="heading-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+
+                    <div>
+                        <h2>Notification Preferences</h2>
+                        <p>Choose which order notifications you want to receive.</p>
+                    </div>
+                </div>
+
+
+                <div class="setting-row">
+
+                    <div>
+                        <h3>New Order Notifications</h3>
+                        <p>Get notified when a new order arrives.</p>
+                    </div>
+
+                    <label class="switch">
+                        <input type="checkbox" id="newOrderNotifications">
+                        <span class="slider"></span>
+                    </label>
+
+                </div>
+
+
+                <div class="setting-row">
+
+                    <div>
+                        <h3>Order Status Notifications</h3>
+                        <p>Get notified when an order status changes.</p>
+                    </div>
+
+                    <label class="switch">
+                        <input type="checkbox" id="statusNotifications">
+                        <span class="slider"></span>
+                    </label>
+
+                </div>
+
+
+                <button type="button" class="primary-button"
+                    id="saveNotificationsButton">
+
+                    <i class="fas fa-save"></i>
+                    Save Notification Preferences
+
+                </button>
+
+            </section>
+
+
+            <!-- ACCOUNT INFORMATION -->
+            <section class="settings-card account-card">
+
+                <div class="section-heading">
+                    <div class="heading-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+
+                    <div>
+                        <h2>Account Information</h2>
+                        <p>Information associated with your shop account.</p>
+                    </div>
+                </div>
+
+                <div class="account-info">
+
+                    <div>
+                        <span>Account Email</span>
+                        <strong id="accountEmail">-</strong>
+                    </div>
+
+                    <div>
+                        <span>Assigned Shop ID</span>
+                        <strong id="accountShopId">-</strong>
+                    </div>
+
+                    <div>
+                        <span>Account Status</span>
+                        <strong class="account-status">
+                            <i class="fas fa-circle"></i> Active
+                        </strong>
+                    </div>
+
+                </div>
+
+                <p class="account-note">
+                    Your registered email and assigned Shop ID cannot be changed
+                    from this page.
+                </p>
+
+            </section>
+
+
+            <footer class="footer">
+                <p>© 2026 FoodCourt Management System</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- MOBILE BOTTOM NAVIGATION -->
+    <nav class="mobile-bottom-nav">
+
+        <a href="dashboard.html">
+            <i class="fas fa-th-large"></i>
+            <span>Home</span>
+        </a>
+
+        <a href="menu.html">
+            <i class="fas fa-book-open"></i>
+            <span>Menu</span>
+        </a>
+
+        <a href="orders.html">
+            <i class="fas fa-receipt"></i>
+            <span>Orders</span>
+        </a>
+
+        <a href="settings.html" class="active">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+        </a>
+
+    </nav>
+
+
+    <!-- MESSAGE TOAST -->
+    <div id="toast" class="toast"></div>
+
+
+    <script src="js/settings.js"></script>
+
+</body>
+</html>

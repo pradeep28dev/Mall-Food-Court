@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explore Food | FoodCourt</title>
+
+    <link rel="stylesheet" href="css/home.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <a href="home.html" class="brand">
+            <span>🍔</span>
+            FoodCourt
+        </a>
+
+        <nav class="nav-links">
+            <a href="home.html" class="active">Explore</a>
+            <a href="orders.html">My Orders</a>
+            <a href="notifications.html">Notifications    <span class="notification-badge">0</span> </a>
+        </nav>
+
+        <div class="header-actions">
+
+            <a href="cart.html" class="cart-button">
+                🛒 <span>Cart</span>
+                <span id="cartCount" class="cart-count">0</span>
+            </a>
+
+            <div class="profile-section">
+                <div class="profile-avatar" id="profileAvatar">C</div>
+                <a href="profile.html">
+                    <div class="profile-details">
+                        <span id="customerName">Customer</span>
+                    </div>
+                </a>
+            </div>
+
+            <button id="logoutButton" class="logout-button">
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main>
+
+        <!-- HERO SECTION -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="hero-tag">YOUR FOOD JOURNEY STARTS HERE</span>
+
+                <h1>
+                    Delicious food.<br>
+                    <span>Zero waiting confusion.</span>
+                </h1>
+
+                <p>
+                    Discover your favourite food shops, explore menus
+                    and order delicious meals from your mall food court.
+                </p>
+
+                <a href="#shopsSection" class="explore-button">
+                    Explore Food Shops →
+                </a>
+
+            </div>
+
+            <div class="hero-illustration">
+                <div class="food-circle">🍕</div>
+                <span class="floating-food food-one">🍔</span>
+                <span class="floating-food food-two">🍟</span>
+                <span class="floating-food food-three">🥤</span>
+            </div>
+
+        </section>
+
+
+        <!-- SEARCH SECTION -->
+
+        <section class="search-section" id="shopsSection">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-tag">DISCOVER</span>
+                    <h2>Explore Food Shops</h2>
+                    <p>Find something delicious to eat today.</p>
+                </div>
+
+                <span id="shopCount" class="shop-count">0 Shops</span>
+            </div>
+
+            <div class="search-box">
+                <span>🔍</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search food shops..."
+                >
+
+                <button id="clearSearch" type="button">Clear</button>
+            </div>
+
+        </section>
+
+
+        <!-- SHOP LIST -->
+
+        <section class="shops-section">
+
+            <div id="shopsGrid" class="shops-grid">
+                <!-- Shop cards will be added using JavaScript -->
+            </div>
+
+            <div id="emptyState" class="empty-state" style="display: none;">
+
+                <div class="empty-icon">🍽️</div>
+
+                <h3>No Food Shops Found</h3>
+
+                <p id="emptyMessage">
+                    There are currently no available food shops.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+        <p>© 2026 FoodCourt. Made for food lovers.</p>
+    </footer>
+
+
+    <script src="js/home.js"></script>
+    <script src="js/notification-badge.js"></script>
+</body>
+</html>
